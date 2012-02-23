@@ -1,0 +1,14 @@
+-# in app/views/movies/similar.html.haml
+
+%h2 Similar movies page for #{@movie.title}
+
+%table#similarMovies
+  %thead
+    %tr
+      %th Title
+  %tbody
+    - @similarMoviesList.each do |amovie|
+      %tr
+        %td= amovie.title
+
+= link_to 'Back to movie list', movies_path  
