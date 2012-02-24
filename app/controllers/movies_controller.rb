@@ -7,15 +7,15 @@ class MoviesController < ApplicationController
     @movie = Movie.find_id_in_TMDb(@id)
     
     #change starts from here
-    if @movie != nil  #valid search
+    #if @movie != nil  #valid search
       @director = @movie.director
 
       if @director != ""
-        @similarMoviesList = Movie.find_director_in_TMDb(@director) #should be model method???
+        @movies = Movie.find_director_in_TMDb(@director) #should be model method???
       else
         redirect_to movies_path(:noDirector => @id)
       end
-    end    
+    #end    
     #debugger
   end
   #end of q3 scenario 2 
